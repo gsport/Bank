@@ -1,0 +1,202 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-gb">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Installation Guide</title>
+<style type="text/css">
+<!--
+A:link      	{text-decoration: none; color: #11116E;}
+A:visited   	{text-decoration: none; color: #11116E;}
+A:hover      	{font-style: normal; color: #000000; text-decoration: underline;}
+
+SELECT       	{font-family:Verdana;font-size:8pt;background:#FFFFFF;color:#000000;}
+INPUT       	{font-family:Verdana;font-size:8pt;background:#FFFFFF;color:#000000;}
+TEXTAREA     	{font-family:Verdana;font-size:8pt;background:#FFFFFF;color:#000000;}
+hr		{color: #11116E; background-color: #11116E; height: 1px;}
+
+body {
+	background-color: #FFFFFF;
+	color: #000000;
+	font-family: verdana;
+	font-size: 10pt;
+	scrollbar-base-color: #0263C2;
+	scrollbar-arrow-color:  #FFFFFF;
+	}
+TD{
+	font-family: verdana;
+	font-size: 10pt;
+	}
+-->
+</style>
+</head>
+
+<body topmargin="50" leftmargin="50">
+
+<p align="center"><img border="0" src="cjt.jpg" width="545" height="220"></p>
+
+<p align="left"><br>
+<font size="4"><b>
+Installation Guide</b></font></p>
+<div align="left">
+  <table border="0" cellpadding="3" cellspacing="0" width="100%">
+    <tr>
+      <td width="15%" height="19"><b>Script Name</b></td>
+      <td width="85%" height="19">CJ Tag Board v3.0</td>
+    </tr>
+    <tr>
+      <td width="100%" height="21" colspan="2">
+        <hr>
+      </td>
+    </tr>
+    <tr>
+      <td width="15%" height="21" valign="top"><b>Files Required<br>
+        &amp; Permissions:</b></td>
+      <td width="85%" height="21">tag.php<br>
+        admin.php<br>
+        insert.php<br>
+        admin_index.php<br>
+        login.php<br>
+        config.php<br>
+        htmlcode.dat<br>
+        login.php<br>
+        display.php<br>
+        details.php<br>
+        stylesheet.php<br>
+        admin_stylesheet.php<br>
+        all.php<br>
+        stats.txt&nbsp;&nbsp;&nbsp; <font color="#FF0000">CHMOD 777</font><br>
+        tag.txt&nbsp;&nbsp;&nbsp; <font color="#FF0000">CHMOD 777</font><br>
+        alltag.txt&nbsp;&nbsp;&nbsp; <font color="#FF0000">CHMOD 777</font><br>
+        tagcount.txt&nbsp;&nbsp;&nbsp; <font color="#FF0000">CHMOD 777</font><br>
+        ipban.php&nbsp;&nbsp;&nbsp; <font color="#FF0000">CHMOD 777</font><br>
+        flood.php&nbsp;&nbsp;&nbsp; <font color="#FF0000">CHMOD 777</font><br>
+        and all images in directory 'e'</td>
+    </tr>
+    <tr>
+      <td width="100%" height="21" colspan="2">
+        <hr>
+      </td>
+    </tr>
+    <tr>
+      <td width="15%" height="21" valign="top"><b>Installation</b></td>
+      <td width="85%" height="21"><b>1)&nbsp; Variables to edit in config.php</b>
+        <p>It is not necessary to edit config.php until you have got your
+        tagboard working however the variables that can be edited in config.php
+        each have comments by them explaining their purpose.<br>
+        <br>
+        <b><br>
+        2)&nbsp;&nbsp;Upload<br>
+        <br>
+        </b>Upload all the files required (see above) into a directory
+        preferably called &quot;<font color="#0000FF">tagboard</font>&quot; so
+        your link to tag.php would be <a href="http://www.yourdomain.com/randomquote/randomquote.php">www.yourdomain.com/tagboard/tag.php</a></p>
+        <p><b><br>
+        3)&nbsp; Editing your htmlcode.dat<br>
+        <br>
+        </b>If you have chosen to use a directory called &quot;<font color="#0000FF">tagboard</font>&quot;
+        or &quot;<font color="#0000FF">board</font>&quot; and you are going to
+        have your tagboard on your homepage then you have to edit a few things
+        in your htmlcode.dat file (edits shown in red):<b><br>
+        <br>
+        </b><font color="#808080">&lt;link rel="stylesheet" href=&quot;</font><font color="#FF0000">tagboard/</font><font color="#808080">stylesheet.php&quot;
+        type=&quot;text/css&quot;&gt;<br>
+        <br>
+        and<br>
+        <br>
+        &lt;iframe name="tag" border="0" frameborder="0" width="100%" height="200" align="center"
+        src=&quot;</font><font color="#FF0000">tagboard/</font><font color="#808080">display.php&quot; target="_blank">&lt;/iframe&gt;<br>
+        <br>
+        and<br>
+        <br>
+        &lt;form method="POST" action=&quot;</font><font color="#FF0000">tagboard/</font><font color="#808080">tag.php&quot; target="tag"
+        name=&quot;tagboard&quot;&gt;<br>
+        <br>
+        and finally<br>
+        <br>
+        &lt;input type="button" class=&quot;xtra&quot; value=&quot;Xtras&quot;
+        OnClick=&quot;</font><font color="#FF0000">tagboard/</font><font color="#808080">popUp('insert.php')&quot;&gt;</font><font color="#808080"><br>
+        <br>
+        </font><b><br>
+        4)&nbsp; Linking to htmlcode.dat!<br>
+        <br>
+        a)&nbsp; How to create a link within a PHP Page (.php, .php3, .php4)
+        </b><br>
+        <br>
+        To create the INSERT using PHP use this code:<br>
+        <br>
+        <textarea rows="3" name="S1" cols="58"><?
+include("tagboard/htmlcode.dat");
+?></textarea><br>
+        <br>
+        NOTE: You may need to change the path to htmlcode.dat (to be certain
+        you could enter the full path!)<br>
+        <br>
+        <b>b)&nbsp; How to create a link within an html Page (html, htm)</b><br>
+        <br>
+        To create the INSERT using html simple copy and paste the code found
+        inside htmlcode.dat INTO YOUR PAGE!<br>
+        <br>
+        <textarea rows="5" name="S1" cols="58">Paste htmlcode.dat anywhere in your html page</textarea><br>
+        <br>
+        <br>
+        Once you have added the code to the page, upload the page!<b><br>
+        <br>
+        <br>
+        5.&nbsp; Administering Your Tag Board<br>
+        <br>
+        </b>To administer your Tag Board all you have to do is go to <a href="http://www.yoursite.com/tagboard/admin.php">www.yoursite.com/tagboard/admin.php</a>
+        and log in with the username and password you defined in config.php.&nbsp;
+        Once in you will see options in a left hand side menu.<br>
+        <b><br>
+        Administering Tags
+        </b>- this option allows you to edit and delete tags from your tag
+        board.<br>
+        &nbsp;&nbsp; <b>Editing</b> - to edit a tag, click edit and modify the
+        post in the box provided, you can only edit the message<br>
+        &nbsp;&nbsp; <b>Deleting</b> - to delete click the delete button and
+        confirm the pop up.<br>
+        <b>IP Banning</b> - this option allows you to ban unwanted posters, to
+        find a posters IP, click on the name<br>
+        <b>Support</b> - if your still stuck, this link will take you to the
+        forums<br>
+        <b>About</b> - about the CJ Tag Board<br>
+        <b>Logout</b> - this will log you out of the admin<b><br>
+        </b></p>
+      </td>
+    </tr>
+    <tr>
+      <td width="100%" height="21" valign="top" colspan="2">
+        <hr>
+      </td>
+    </tr>
+    <tr>
+      <td width="15%" height="4" valign="top"><b>Finished</b></td>
+      <td width="85%" height="4"><b>Thats all!<br>
+        </b><br>
+        If you have any problems with the script go to <a href="http://www.cj-design.com/?id=forum">www.cj-design.com/?id=forum</a>
+        and seek advice!</td>
+    </tr>
+    <tr>
+      <td width="100%" height="4" valign="top" colspan="2">
+        <hr>
+      </td>
+    </tr>
+    <tr>
+      <td width="15%" height="3" valign="top"><b>Donate</b></td>
+      <td width="85%" height="3">Show your appreciation for this script by
+        donating : ) <a href="http://www.cj-design.com/?id=donate">www.cj-design.com/?id=donate</a></td>
+    </tr>
+    <tr>
+      <td width="100%" height="10" valign="top" colspan="2">
+        <hr>
+      </td>
+    </tr>
+  </table>
+</div>
+<p align="center">© CJ Website Design
+</p>
+
+</body>
+
+</html>
